@@ -179,8 +179,8 @@ export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
-          code({ node, inline, className, children, ...props }) {
-            if (!inline) {
+          code({ className, children, ...props }) {
+            if (className?.includes("language-")) {
               return <CustomCodeBlock className={className} {...props}>{children}</CustomCodeBlock>;
             }
             return (

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from "react";
 import Sidebar from "@/components/Sidebar";
 import ChatArea from "@/components/ChatArea";
@@ -144,8 +146,8 @@ export default function Home() {
         messages: [
           ...(activeConversation?.messages || []),
           {
-            id: "temp",
-            role: "assistant",
+            id: "temp" as string,
+            role: "assistant" as const,
             content: tempAssistantMessage,
             timestamp: Date.now(),
           },

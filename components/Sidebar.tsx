@@ -9,7 +9,7 @@ interface SidebarProps {
   onCreateConversation: () => void;
   onDeleteConversation: (id: string) => void;
   onExportBackup: () => void;
-  onImportBackup: () => void;
+  onImportBackup: (data: string) => void;
 }
 
 export default function Sidebar({
